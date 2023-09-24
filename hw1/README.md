@@ -1,9 +1,12 @@
 # Web Programming HW#1
 按照老師的readme來做
 1. ### install dependencies
-使用yarn安裝
+使用yarn安裝(前端也要因為有使用lint)
 
     cd backend
+    yarn
+和
+    cd frontend
     yarn
 2. ### environmental setup
 在`\backend`中建立`.env`檔
@@ -28,7 +31,7 @@
 
     cd frontend
     yarn lint
-如過發生錯誤，也可以照老師的readme來設定lint
+如果發生錯誤，也可以照老師的readme來設定lint
 
 ## 完美要求
 1. 畫面右上方會出現篩選字樣的按鈕，按下去即可就各類別進行篩選，None表示不篩選
