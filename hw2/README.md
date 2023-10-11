@@ -6,6 +6,7 @@
     cd backend
     yarn
 和
+
     cd frontend
     yarn
     
