@@ -8,7 +8,7 @@
 和
     cd frontend
     yarn
-2. ### environmental setup
+### 2. install dependencies
 在`\backend`中建立`.env`檔
 `.env`檔中請照下方的格式設定
 
