@@ -8,6 +8,8 @@
 和
     cd frontend
     yarn
+
+`yarn`的時候可能會等蠻久的，請見諒。
 ### 2. Setting environment
 在`\backend`中建立`.env`檔
 `.env`檔中請照下方的格式設定
@@ -24,6 +26,7 @@
     cd frontend
     yarn dev
 
+在操作的時候，如果要delete請先點delete按鈕再點圖片上方出現的x符號，在編輯某一個特定的音樂列表時(點入圖片後)，編輯完請點下方的`GO BACK TO HOME PAGE`按鈕，才會把資料存入mongodb，另外react render的時候比較慢，可能會閃過之前開發的時候，寫在純前端的測試資料，等一下應該就可以了。
 ### 5. lint 檢查
 使用`yarn lint`
 
