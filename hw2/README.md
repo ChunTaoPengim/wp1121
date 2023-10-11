@@ -9,6 +9,7 @@
     cd frontend
     yarn
 
+
 `yarn`的時候可能會等蠻久的，請見諒。
 ### 2. Setting environment
 在`\backend`中建立`.env`檔
