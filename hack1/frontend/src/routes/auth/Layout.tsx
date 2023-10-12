@@ -88,7 +88,7 @@ const AuthLayout = () => {
           </TabsList>
         </Tabs>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 tracking-normal">
+          <CardTitle className="flex items-center flex-row gap-2 tracking-normal">
             {/* TODO 1.1: Title and Login Page Title (5%) */}
             {/* Add a logo to the left of the title. */}
             {/* The logo should be vscoddit.svg in the public folder. */}
