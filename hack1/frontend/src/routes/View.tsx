@@ -7,11 +7,12 @@ import { useUser } from '@/contexts/UserContext';
 const View = (): React.ReactNode => {
   const { user } = useUser();
   const { getPostByIndex, votePost } = usePost();
-
+  
   /* (1/3) TODO 2.2: Navigation with `ViewFooter` Buttons (8%) */
   /* Hint 2.2.1: Link page index to React state */
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const post = getPostByIndex(0);
+  const pass = {"title":post?.title, "date":post?.createdAt, "author":post?.author, "content":post?.content}
   /* End (1/3) TODO 2.2 */
 
   /* (3/3) TODO 2.2: Navigation with `ViewFooter` Buttons (8%) */
@@ -51,13 +52,16 @@ const View = (): React.ReactNode => {
     /* Hint 3: Update the dependency array of `useEffect` hook */
   }, []);
   /* End TODO 2.3 */
-
+  const Passwords = {
+    id: 123, // Replace with the actual post ID
+    content: "This is the post content", // Replace with the actual post content
+  };
   return post ? (
     <>
       {/* TODO 2.1: Render Post With `PostCard` and `PostContext` (3%) */}
       {/* Hint 2.1.1: Pass correct arguments to `PostCard` component */}
       {/* Hint 2.1.2: Arguments `post` should be Modified */}
-      <PostCard post={null} />
+      <PostCard post={post} />
       {/* End TODO 2.1 */}
 
       <div className="mt-auto">

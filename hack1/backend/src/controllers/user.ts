@@ -32,12 +32,14 @@ export const createUser = asyncWrapper(
     try {
       // Get user data from the request body
       const userData = req.body;
-  
+      console.log(req)
       // Create a new user using the UserModel
       const newUser = new UserModel(userData);
+      
+
       await newUser.validate();
       // Save the new user to the database
-      console.log(userData);
+
       await newUser.save();
       
       // Return a success response with the newly created user
