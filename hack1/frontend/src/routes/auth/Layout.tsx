@@ -54,6 +54,10 @@ const AuthLayout = () => {
       /* Reference: https://ui.shadcn.com/docs/components/toast#usage */
 
       /* End of TODO 1.5 */
+      if(password !== confirmPassword)
+      {
+        alert("Passwords do not match");
+      }
       register(username, password);
     }
   };
