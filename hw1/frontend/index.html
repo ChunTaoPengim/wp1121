@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+    integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+</head>
+<body>
+    <div id="upper">
+        <h1>My diary</h1>
+        <button id="add-diary">新增</button>
+        <button id="filter-diary">篩選</button>
+    </div>
+    <dialog id="diary-modal">
+        <input type="date" class="add-diary-date">
+        <select class="add-diary-tag">
+            <option value="學業">學業</option>
+            <option value="人際" selected>人際</option>
+            <option value="社團">社團</option>
+        </select>
+        <select class="add-diary-mood">
+                <option value="快樂">快樂</option>
+                <option value="生氣" selected>生氣</option>
+                <option value="難過">難過</option>                
+        </select>
+        <textarea class="add-diary-content"></textarea>
+        <button class="save-input-button">儲存</button>
+        <button class="cancel-input-button">取消</button>
+        
+    </dialog>
+    <dialog id="filter-modal">
+        <select class="filter-diary-tag">
+            <option value="">None</option>
+            <option value="學業">學業</option>
+            <option value="人際" selected>人際</option>
+            <option value="社團">社團</option>
+        </select>
+        <select class="filter-diary-mood">
+            <option value="">None</option>
+            <option value="快樂">快樂</option>
+            <option value="生氣" selected>生氣</option>
+            <option value="難過">難過</option>                
+        </select>
+        <button id="filter-button">確定</button>
+        
+    </dialog>
+    <section id="todos">
+
+        
+    </section>
+
+    
+</body>
+
+
+<template id="todo-item-template">
+    <details class="todo-item">
+        <summary>
+            <p class="todo-date">2023.09.09(六)</p>
+            <div class="todo-tag">
+                人際
+            </div>
+            <div class="todo-mood">
+                快樂             
+            </div>
+        </summary>
+        <p class="todo-description">
+        </p>
+        <button class="edit-button">編輯</button>
+        <dialog class="edit-diary-modal">
+            <input type="date" class="add-diary-date">
+            <select class="add-diary-tag">
+                <option value="學業">學業</option>
+                <option value="人際" selected>人際</option>
+                <option value="社團">社團</option>
+            </select>
+            <select class="add-diary-mood">
+                    <option value="快樂">快樂</option>
+                    <option value="生氣" selected>生氣</option>
+                    <option value="難過">難過</option>                
+            </select>
+            <textarea class="add-diary-content"></textarea>
+            <button class="save-input-button">儲存</button>
+            <button class="cancel-input-button">取消</button>
+            
+        </dialog>
+    </details>
+
+    
+
+</template>
+<script src="index.js"></script>
+  
+</html>

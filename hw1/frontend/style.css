@@ -1,0 +1,79 @@
+#upper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid black;
+  }
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    flex-grow: 1;
+}
+button#add-diary{
+    border-radius: 0.5rem;
+  padding: 0 0.5rem;
+  position: relative;
+  right: 20%;
+}
+#todos {
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: row;
+    align-content: column;
+    padding: 2rem 2rem;
+    gap: 1rem;
+    width:96%;
+    background-color: rgb(163, 209, 235);
+    height: 90%;
+  }
+.todo-item{
+  background-color: rgb(198, 103, 103);
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  width: 12em;
+  
+    
+}
+.todo-date{
+  display: inline;  
+    margin: 3px 3px;
+}
+.todo-mood{
+  display: inline;
+    border-radius: 20%;
+    margin:2px;
+    background-color: rgb(172, 222, 222);
+}
+.todo-tag{
+    display: inline;
+    border-radius: 20%;
+    margin:2px;
+    background-color:rgb(231, 231, 135);
+}
+.add-diary-content{
+    width: 100%;
+  margin-top: 1rem;
+  height: 5rem;
+  resize: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+}
+.todo-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+p.todo-description{
+  width: 100%;
+  display: inline;
+  word-break: break-all;
+}
+
+
+
