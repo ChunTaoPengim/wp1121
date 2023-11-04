@@ -10,13 +10,13 @@ type ChatProps = {
   };
 
 
-const ChatInput = (
+  export default function ChatInput (
    {
     handle,
     actId,
-  }:ChatProps) => {
+  }:ChatProps)  {
     const titleRef = useRef<HTMLTextAreaElement>(null);
-    const { postChat, loading } = useChat();
+    const { postChat } = useChat();
     const handleChat = async () => {
     
         const content = titleRef.current?.value;
@@ -55,4 +55,4 @@ const ChatInput = (
       )
 }
 
-export default ChatInput
+// export default ChatInput

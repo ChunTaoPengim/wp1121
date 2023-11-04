@@ -3,9 +3,9 @@ import React from 'react';
 
 
 
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
-const SwitchUser = () => {
+export default function SwitchUser()  {
    
     const router = useRouter();
     const switchButton = () => {
@@ -19,4 +19,4 @@ const SwitchUser = () => {
     );
 }
 
-export default SwitchUser;
+

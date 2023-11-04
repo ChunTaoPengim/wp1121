@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
 const searchSchema = z.object({
   title: z.string()
 });
-type SearchRequest = z.infer<typeof searchSchema>;
+
 export async function GET(request: NextRequest) {
   const searchparams = await request.nextUrl.searchParams;
 

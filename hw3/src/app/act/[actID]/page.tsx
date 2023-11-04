@@ -1,6 +1,6 @@
 import { db } from "@/db";
 import { usersTable, chatTable } from "@/db/schema";
-import { eq, asc, isNull, sql } from "drizzle-orm";
+import { eq, asc } from "drizzle-orm";
 import ChatInput from "@/components/ChatInput";
 import Chat from "@/components/Chat";
 
@@ -33,6 +33,7 @@ type ChatPageProps = {
       content:chatTable.content,
       handle:chatTable.userHandle,
       username:usersTable.displayName,
+      chatId:chatTable.id,
     }).from(chatTable)
     .where(eq(chatTable.actId, actId))
     .orderBy(asc(chatTable.createdAt))
@@ -42,10 +43,11 @@ type ChatPageProps = {
 
     return (
       <>
+      <p>活動名稱{title} </p>
       {joined?<ChatInput handle={handle} actId={actId}/>:<div>未參加活動</div>}
        {/* <ChatInput handle={handle} actId={actId}/> */}
         {chats.map((act) => (
-          <Chat username={act.username} content={act.content}/>
+          <Chat username={act.username} content={act.content} key={act.chatId}/>
         ))}
       </>
       

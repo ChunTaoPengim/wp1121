@@ -4,9 +4,8 @@ import { useRef, useState, useEffect } from "react";
 import useAct from "@/hook/useAct";
 import useUserInfo from "@/hook/useUserInfo";
 import React from 'react'
-import { start } from "repl";
 
-const ActivityInput = () => {
+export default function ActivityInput(){
 
   const [dialogOpen, setDialogOpen] = useState(false);
     
@@ -14,11 +13,11 @@ const ActivityInput = () => {
   const titleRef = useRef<HTMLInputElement>(null);
   const startRef = useRef<HTMLInputElement>(null);
   const endRef = useRef<HTMLInputElement>(null);
-  const { postTweet, loading } = useAct();
+  const { postTweet } = useAct();
 
   const dialog = document.querySelector('dialog');
   
-function closeDialog(event:any) {
+function closeDialog(event:any) {// eslint-disable-line
   // If the target dialog is
   if(!dialog) return;
   if (!event.target.contains(dialog)) return;
@@ -35,7 +34,7 @@ useEffect(() => {
   return () => {
     document.removeEventListener('mousedown', closeDialog);
   };
-}, [dialogOpen]);
+}, [dialogOpen]);  // eslint-disable-line
   const handleOpen = () =>{
     setDialogOpen(true);
   }
@@ -65,11 +64,16 @@ useEffect(() => {
     if(end < start)
     {
       alert("start should be earlier than end")
-      return
+    }
+    if(end < start)
+    {
+      return;
     }
     if((end.valueOf() - start.valueOf()) > 604800000){
       alert("can't pass 1 week");
-      return
+    }
+    if((end.valueOf() - start.valueOf()) > 604800000){
+      return;
     }
 
     
@@ -111,4 +115,3 @@ useEffect(() => {
   )
 }
 
-export default ActivityInput

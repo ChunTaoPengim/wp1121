@@ -4,13 +4,7 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
-function getSeed(username: string) {
-    const code = new TextEncoder().encode(username);
-    return Array.from(code).reduce(
-      (acc, curr, i) => (acc + curr * i) % 1_000_000,
-      0,
-    );
-  }
+
   
   export function validateHandle(handle?: string | null) {
     if (!handle) return false;

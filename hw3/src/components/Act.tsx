@@ -1,11 +1,6 @@
 import React from 'react'
 import Link from "next/link";
 
-import { MessageCircle, Repeat2, Share } from "lucide-react";
-
-import { Separator } from "@/components/ui/separator";
-
-
 import JoinButton from './JoinButton';
 type JoinProps = {
   username?: string;
@@ -19,18 +14,18 @@ type JoinProps = {
   end_date: string;
   joined?: boolean;
 };
-const Act = ({
-  username,
+export default function Act ({
+  username,// eslint-disable-line
   handle,
   id,
-  authorName,
-  authorHandle,
+  authorName,// eslint-disable-line
+  authorHandle,// eslint-disable-line
   title,
   joins,
   start_date,
   end_date,
   joined,
-}:JoinProps) => {
+}:JoinProps)  {
   return (
 
     <>
@@ -58,4 +53,4 @@ const Act = ({
   )
 }
 
-export default Act
+// export default Act

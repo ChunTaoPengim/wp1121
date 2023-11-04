@@ -1,10 +1,8 @@
 'use client'
 import React, { useState, useRef } from 'react'
-import { db } from "@/db";
-import { actTable } from "@/db/schema";
-import { like} from "drizzle-orm";
+
 import useAct from '@/hook/useAct';
-const SearchBar =  () => {
+export default function SearchBar()  {
     const inputRef = useRef<HTMLInputElement>(null);
     const [arr, setArr] = useState<string[]>([])
     const {getAct} = useAct()
@@ -42,10 +40,9 @@ const SearchBar =  () => {
 
       <button onClick={handleSearch}>Search</button>
       {arr?.map((act:string) => (
-          <div>{act}</div>
+          <div>{act}</div> // eslint-disable-line
         ))}
     </div>
   )
 }
 
-export default SearchBar

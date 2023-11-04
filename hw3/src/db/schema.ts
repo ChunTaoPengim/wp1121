@@ -7,7 +7,6 @@ import {
   timestamp,
   unique,
   varchar,
-  date,
 } from "drizzle-orm/pg-core";
 
 // schemas define the structure of the tables in the database

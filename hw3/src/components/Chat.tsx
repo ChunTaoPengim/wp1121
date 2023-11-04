@@ -5,13 +5,12 @@ type ChatProps = {
   content: string;
   username: string;
 };
-const Chat = ({
+export default function Chat ({
   content,
   username,
-}:ChatProps) => {
+}:ChatProps) {
   return (
     <div>{username}: {content}</div>
   )
 }
 
-export default Chat

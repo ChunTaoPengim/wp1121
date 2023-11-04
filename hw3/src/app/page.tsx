@@ -1,10 +1,8 @@
-import { eq, desc, isNull, sql , asc} from "drizzle-orm";
+import { eq, sql , asc} from "drizzle-orm";
 import SwitchUser from "@/components/SwitchUser"
 import NameDialog from "@/components/NameDialog";
-import { Separator } from "@/components/ui/separator";
 import { db } from "@/db";
 import { actTable, joinsTable, usersTable } from "@/db/schema";
-import { Button } from "@/components/ui/button";
 import ActivityInput from "@/components/ActivityInput";
 import Act from "@/components/Act";
 import SearchBar from "@/components/SearchBar";
