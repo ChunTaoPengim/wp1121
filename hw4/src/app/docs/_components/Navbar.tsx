@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
 import { publicEnv } from "@/lib/env/public";
 
-import { createDocument, deleteDocument, getDocuments , getUsers, createDocumentWithOthers} from "./actions";
+import { deleteDocument, getDocuments , getUsers, createDocumentWithOthers} from "./actions";
 
 async function Navbar() {
   const session = await auth();
@@ -40,7 +40,7 @@ async function Navbar() {
           </Link>
         </div>
 
-        <form
+        {/* <form
           className="w-full hover:bg-slate-200"
           action={async () => {
             "use server";
@@ -56,7 +56,7 @@ async function Navbar() {
             <AiFillFileAdd size={16} />
             <p>Create Chatting</p>
           </button>
-        </form>
+        </form> */}
       </nav>
       <section className="flex w-full flex-col pt-3">
         {documents.map((doc, i) => {
