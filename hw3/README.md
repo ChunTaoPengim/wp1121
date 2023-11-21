@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Web Programming HW#3
+按照老師的readme來做
+### 1. install dependencies
+使用yarn安裝
 
-## Getting Started
+    cd hw3
+    yarn
+    
+### 2. Setting environment
+在`\hw3`中建立`.env.local`檔
+`.env.local`檔中請照下方的格式設定
 
-First, run the development server:
+    POSTGRES_URL = postgres://postgres:postgres@localhost:5432/hw3
+### 3. run the server(請確認docker desktop已開啟)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    docker compose up -d
+    yarn migrate
+### 4. open frontend
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    yarn dev
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 5. lint 檢查
+使用`yarn lint`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    yarn lint
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+如果發生錯誤，也可以照老師的readme來設定，yarn的時候可能會等蠻久的，請見諒。
+我把參加退出的功能實作在主葉面，另外切換使用者的時候如果是新增(handle改變)，請重新整理頁面才會是該使用者的參加/未參加，如果handle不變就不用刷新，但有問題的話最好還是重新整理
+大部分的功能應該都有實作，有些小問題或功能可能出錯，希望您可以高抬貴手，辛苦了，謝謝。
+## 完美要求
+無
