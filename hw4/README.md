@@ -3,11 +3,11 @@
 ### 1. install dependencies
 使用yarn安裝
 
-    cd hw3
+    cd hw4
     yarn
     
 ### 2. Setting environment
-在`\hw3`中建立`.env.local`檔
+在`\hw4`中建立`.env.local`檔
 `.env.local`檔中請照下方的格式設定
 
     POSTGRES_URL = postgres://postgres:postgres@localhost:5432/hw4
