@@ -58,11 +58,17 @@ function DocPage() {
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, [router]);
   
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault(); // Prevents adding a new line in the textarea
+      handleChat();
+    }
+  };
   return (
   
    <div>
-      <textarea ref={titleRef}>Type something to chat</textarea>
-      <button onClick={handleChat}>新增</button>
+      <textarea ref={titleRef} onKeyDown={handleKeyDown}>Type something to chat</textarea>
+      {/* <button onClick={handleChat}>新增</button> */}
     </div>
   );
 }
