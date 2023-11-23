@@ -102,7 +102,7 @@ export async function updateTaskComplete(
   });
 
   // TODO: 9. Update the task's `completed` column
-
+  await db.update(tasksTable).set({ completed }).where(eq(tasksTable.displayId, taskId)).returning();
   // TODO: 9. end
 
   revalidatePath(`/projects/${projectId}`);
@@ -120,10 +120,10 @@ export async function deleteTask(taskId: string, projectId: string) {
   });
 
   // TODO: 10. Delete the task whose displayId is `taskId`
-
+  await db.delete(tasksTable).where(eq(tasksTable.displayId, taskId)).returning();
   // TODO: 10. end
 
-  revalidatePath(`/projects/${projectId}`);
+  revalidatePath(`/projects`);
 }
 
 const deleteProjectSchema = z.object({
