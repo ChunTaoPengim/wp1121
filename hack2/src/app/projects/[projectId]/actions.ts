@@ -123,7 +123,7 @@ export async function deleteTask(taskId: string, projectId: string) {
   await db.delete(tasksTable).where(eq(tasksTable.displayId, taskId)).returning();
   // TODO: 10. end
 
-  revalidatePath(`/projects`);
+  revalidatePath(`/projects/${projectId}`);
 }
 
 const deleteProjectSchema = z.object({
