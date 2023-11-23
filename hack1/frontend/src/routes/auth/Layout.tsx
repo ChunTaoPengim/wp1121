@@ -44,6 +44,7 @@ const AuthLayout = () => {
       // login('test', '123');
       /* Warning: Remember to change it back if you want to test the login functionality. */
     } else {
+      
       /* TODO 1.5: Ensure User Registration Functions Properly (8%) */
       /* If the user is registering, you need to check if the passwords match. */
       /* If the passwords do not match, you should show a toast with */
@@ -52,6 +53,18 @@ const AuthLayout = () => {
       /* They can be created via the `toast` function provided by `useToast()` */
       /* Reference: https://ui.shadcn.com/docs/components/toast#usage */
 
+      /* If the passwords match, you should call the `register` function */
+      /* provided by the `useUser()` hook. */
+      /* The `register` function takes in the username and password as arguments. */
+      if( password !== confirmPassword){
+        toast({
+          description: 'Passwords do not match',
+        });
+        return; 
+      }
+      
+
+      
       /* End of TODO 1.5 */
       register(username, password);
     }
@@ -73,11 +86,12 @@ const AuthLayout = () => {
               <TabsTrigger
                 asChild
                 key={tab.title}
-                value=""
+                value={tab.path}
                 className="last-of-type:border-r-0"
                 data-testid={`tab-${tab.path}`}
+                
               >
-                <NavLink to="" />
+                <NavLink to={`${tab.path}`} > {tab.title}</NavLink>
               </TabsTrigger>
               /* End of TODO 1.3 */
             ))}
@@ -89,10 +103,18 @@ const AuthLayout = () => {
             {/* Add a logo to the left of the title. */}
             {/* The logo should be vscoddit.svg in the public folder. */}
             {/* The logo should have alt text "VSCoddit Logo". */}
+            
             {/* The title should be "VSCoddit" */}
-            <img data-testid="header-logo" className="h-5 w-5 brightness-200" />
-            <span data-testid="header-title" />
-            {/* END of TODO 1.1 */}
+            
+            
+
+           
+
+          
+
+            <img data-testid="header-logo" className="h-5 w-5 brightness-200"  src='./vscoddit.svg' alt='VSCoddit'/>
+            <span data-testid="header-title" />VSCoddit 
+            {/* END of  */}
           </CardTitle>
           <CardDescription>
             {location.pathname === '/login'
@@ -115,6 +137,10 @@ const AuthLayout = () => {
                 type="text"
                 name="username"
                 autoComplete="username"
+                required
+                placeholder="Enter Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
               {/* End of TODO 1.4 */}
             </div>
@@ -131,6 +157,12 @@ const AuthLayout = () => {
                 type="password"
                 name="password"
                 autoComplete="current-password"
+                required
+                placeholder="Enter Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                
+
               />
               {/* End of TODO 1.4 */}
             </div>
@@ -153,6 +185,10 @@ const AuthLayout = () => {
                 type="password"
                 name="confirm-password"
                 autoComplete="new-password"
+                required={location.pathname === '/register'}
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
               {/* End of TODO 1.5 */}
             </div>

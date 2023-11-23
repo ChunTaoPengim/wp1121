@@ -27,11 +27,22 @@ export const getUsers = asyncWrapper(
 export const createUser = asyncWrapper(
   async (
     req: Request<{}, {}, User.Post.Payload>,
-    res: Response<User.Post.Response<Schema.Types.ObjectId>>,
+    res: Response<User.Post.Response<Schema.Types.ObjectId> |ErrorResponse>,
   ) => {
     /* TODO 1.5: Ensure User Registration Functions Properly (8%) */
     /* Create new user using `UserModel` */
     /* Return 201 with new user */
+    /* Return 400 with "User already exists" if user already exists */
+    const existingUser = await UserModel.findOne({ email: req.body.username });
+      if (existingUser) {
+        return res.status(400).send({ message: 'User already exists' });
+      }
+
+      const newUser = await UserModel.create(req.body);
+      if (!newUser) {
+        return res.status(400).send({ message: 'Failed to create user' });
+      }
+
     throw new Error('`createUser` Not Implemented');
     /* End of TODO 1.5 */
   },

@@ -9,6 +9,7 @@ import type { User } from '@shared/types';
 import { AxiosError } from 'axios';
 import { useToast } from '@/components/ui/use-toast';
 import { UserService } from '@/services/userService';
+import { useEffect } from 'react';
 
 type UserContextType = {
   user: User | null;
@@ -31,7 +32,7 @@ export const UserProvider = ({ children }: PropsWithChildren) => {
   const location = useLocation();
   const { toast } = useToast();
 
-  /* TODO 1.2: Redirect to Login Page (5%) */
+  /* : Redirect to Login Page (5%) */
   /* Add a useEffect hook that redirects the user to the login page if they are not authenticated. */
   /* Only redirect if the user is not on the login or register page. */
   /* Use the `navigate('/login')` function to redirect the user. */
@@ -39,6 +40,11 @@ export const UserProvider = ({ children }: PropsWithChildren) => {
   /*            https://reactrouter.com/en/6.16.0/hooks/use-location */
   /*            https://github.com/remix-run/history/blob/main/docs/api-reference.md#location */
 
+  useEffect(() => {
+    if (authenticated === false && location.pathname !== '/login' && location.pathname !== '/register') {
+      navigate('/login');
+    }
+  }, [authenticated, location, navigate])
   /* Reminder: Don't import this useEffect hook if you are tired of being redirected to the login page. */
   /* Warning: But remember to add it back before submitting your work. */
   /* End of TODO 1.2 */
