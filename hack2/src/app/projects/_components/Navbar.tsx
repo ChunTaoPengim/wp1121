@@ -11,6 +11,7 @@ import SignOutButton from "./SignOutButton";
 
 export default async function Navbar() {
   const session = await auth();
+  session?.user?.name
   const userId = session?.user?.id;
   if (!userId || !session?.user) {
     redirect(`${publicEnv.NEXT_PUBLIC_BASE_URL}`);
@@ -56,6 +57,7 @@ export default async function Navbar() {
             {
               // TODO: 7. Display user's name here
               // hint: line 14 of this file
+              session?.user?.name
               // TODO: 7. end
             }
           </span>
