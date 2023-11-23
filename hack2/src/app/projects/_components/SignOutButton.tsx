@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button";
 import { publicEnv } from "@/lib/env/public";
 import { useRouter } from "next/navigation";
 export default function SignOutButton() {
-  function handlesignout() {
+  const handlesignout = () => {
     signOut({ callbackUrl: `${publicEnv.NEXT_PUBLIC_BASE_URL}/auth`});
     
 
   }
-  return <Button data-testid="sign-out-button" variant={"outline"} onClick={()=>{handlesignout}}>Sign Out</Button>;
+  return <Button data-testid="sign-out-button" variant={"outline"} onClick={handlesignout} >Sign Out</Button>;
 }
 // TODO: 4. end
