@@ -8,7 +8,7 @@ import { publicEnv } from "@/lib/env/public";
 import { useRouter } from "next/navigation";
 export default function SignOutButton() {
   function handlesignout() {
-    signOut({ callbackUrl: `${publicEnv.NEXT_PUBLIC_BASE_URL}/auth/signin`});
+    signOut({ callbackUrl: `${publicEnv.NEXT_PUBLIC_BASE_URL}/auth`});
     
 
   }

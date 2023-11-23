@@ -20,8 +20,10 @@ export async function getProject(projectId: string) {
 
   const userToProject = await db.query.usersToProjectsTable.findFirst({
     // . Select the correct project by userId and projectId
-
-    // TODO: 8. end
+    where: and(eq(usersToProjectsTable.projectId, projectId), eq(usersToProjectsTable.userId, userId)),
+   
+    // change this line
+    // TODO: 8. ends
     columns: {},
     with: {
       project: {
