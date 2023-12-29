@@ -70,7 +70,6 @@ app.use(
       path: '/',
       maxAge: 1000 * 60 * 60 * 24 * 7,
       secure: false,
-      domain: '112-1-database-final.vercel.app',
     },
   })
 );
