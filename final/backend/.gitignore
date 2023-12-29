@@ -1,0 +1,5 @@
+node_modules
+.env
+
+#pg_data
+pg-data
