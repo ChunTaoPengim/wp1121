@@ -26,7 +26,7 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: 'https://112-1-database-final.vercel.app',
+    origin: 'http://localhost:3000',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   })
 );
@@ -69,8 +69,8 @@ app.use(
     cookie: {
       path: '/',
       maxAge: 1000 * 60 * 60 * 24 * 7,
-      secure: true,
-      sameSite: 'none',
+      secure: false,
+      domain: 'localhost',
     },
   })
 );
