@@ -70,6 +70,7 @@ app.use(
       path: '/',
       maxAge: 1000 * 60 * 60 * 24 * 7,
       secure: false,
+      sameSite: 'none',
     },
   })
 );
